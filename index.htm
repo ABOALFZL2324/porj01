@@ -88,7 +88,7 @@
 
    <section id="events">
     <h2>رویدادها</h2>
-    <div id="events-content">رویدادها در حال بارگذاری هستند...</div>
+    <div id="events-content">رویدادها در حال بارگذاری هستند...</div> 
 </section>
 
     <section id="contact">
@@ -109,7 +109,7 @@
     }
     
     document.addEventListener('DOMContentLoaded', function() {
-    fetch('روبداد.txt')
+    fetch('roidad.txt')
         .then(response => response.text())
         .then(data => {
             document.getElementById('events-content').innerText = data;
