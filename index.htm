@@ -1,21 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa-ir">
 <head>
-    <link rel="stylesheet" href="index.css">
-    <link href="bootstrap.css" rel="stylesheet" type="text/css">
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>صفحه اصلی </title>
+    <title> مسجدخاتم الانبیاء</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    
 </head>
-<body dir="rtl">
-<a href="bot/bootstrap.html">
-<button type="button" class="btn btn-dark" >رفتن به صفحه اصلی</button>
-</a>
+<body>
+
+<header>
+    <h1>مسجد خاتم الانبیاء</h1>
+    <p>به وب‌سایت مسجد خوش آمدید!</p>
+</header>
+
+<nav>
+    <a href="#about">درباره ما</a>
+    <a href="#services">خدمات</a>
+    <a href="#events">رویدادها</a>
+    <a href="#contact">تماس با ما</a>
+</nav>
+
+<main>
+    <section id="about">
+        <h2>درباره ما</h2>
+        <p>مسجد النبی یک مکان مقدس برای عبادت و اجتماع مسلمانان است. ما به دنبال فراهم آوردن فضایی دوستانه و پشتیبان برای همه اعضای جامعه هستیم.</p>
+    </section>
+
+    <section id="services">
+        <h2>خدمات</h2>
+        <p>ما خدمات مختلفی از جمله نماز جماعت، کلاس‌های قرآن، و جلسات مشاوره دینی ارائه می‌دهیم.</p>
+    </section>
+
+   <section id="events">
+    <h2>رویدادها</h2>
+    <div id="events-content">رویدادها در حال بارگذاری هستند...</div>
+</section>
+
+    <section id="contact">
+    <h2>تماس با ما</h2>
+    <p>برای ارتباط با ما، لطفاً با شماره تلفن ۰۲۱-xxxxxxx تماس بگیرید یا به آدرس ایمیل info@masjednabi.com پیام بفرستید.</p>
+    <button onclick="welcomeMessage()">پیام خوش آمدگویی</button>
+</section>
+</main>
+
+<footer>
+    <p>&copy; 2025 مسجد النبی. تمام حقوق محفوظ است.</p>
+</footer>
+
 </body>
 <script>
     function welcomeMessage() {
         alert('خوش آمدید به مسجد النبی!');
     }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    fetch('روبداد.txt')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('events-content').innerText = data;
+        })
+        .catch(error => console.error('Error fetching the events:', error));
+});
 </script>
 </html>
